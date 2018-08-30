@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personliste</title>
+</head>
+
+<body>
+
+    <section class="data-container"></section>
+
+    <template class="data-template">
+        <article>
+        <h2></h2>
+            <p class="data-github"></p>
+        </article>
+    </template>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", hentJson);
+
+    let personer;
+
+   async function hentJson(){
+
+       let myJson = await fetch("personliste.json");
+       personer = await myJson.json();
+
+       console.log(personer);
+
+       visPersoner();
+    }
+
+    function visPersoner(){
+
+        let modtager = document.querySelector(".data-container");
+        let temp = document.querySelector(".data-template");
+
+        // løb personliste igennem og lav en kopi
+        personer.forEach(person => {
+
+        //lav en klon af template
+        let klon = temp.cloneNode(true).content;
+        //indsæt data i html
+        klon.querySelector("h2").textContent = person.navn;
+        klon.querySelector(".data-github").textContent = person.github;
+        //placer klon i html
+            modtager.appendChild(klon);
+        } )}
+
+    </script>
+
+</body>
+</html>
