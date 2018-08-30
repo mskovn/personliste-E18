@@ -14,6 +14,16 @@
         <article>
         <h2></h2>
             <p class="data-github"></p>
+              <p class="data-website"></p>
+            <p class="data-mail"></p>
+            <p class="data-adresse"></p>
+            <p class="data-alder"></p>
+            <p class="data-civilstatus"></p>
+            <p class="data-tlf"></p>
+            <p class="data-facebook"></p>
+            <p class="data-hobby"></p>
+            <p class="data-sex"></p>
+            <p class="data-billede"></p>
         </article>
     </template>
 
@@ -45,7 +55,18 @@
         //indsæt data i html
         klon.querySelector("h2").textContent = person.navn;
         klon.querySelector(".data-github").textContent = person.github;
+        klon.querySelector(".data-website").textContent = person.website;
+        klon.querySelector(".data-mail").textContent = person.mail;
+        klon.querySelector(".data-adresse").textContent = person.adresse;
+        klon.querySelector(".data-alder").textContent = person.alder;
+        klon.querySelector(".data-civilstatus").textContent = person.civilstatus;
+        klon.querySelector(".data-tlf").textContent = person.tlf;
+        klon.querySelector(".data-facebook").textContent = person.facebook;
+        klon.querySelector(".data-hobby").textContent = person.hobby;
+        klon.querySelector(".data-sex").textContent = person.sex;
+        klon.querySelector(".data-billede").textContent = person.billede;
         //placer klon i html
+            modtager.appendChild(klon);
             modtager.appendChild(klon);
         } )}
 
